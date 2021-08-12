@@ -14,3 +14,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import { toggleForm } from '../components/toggle_form';
+import { multipleSelect } from '../plugins/select2';
+
+document.addEventListener('turbolinks:load', () => {
+  toggleForm();
+  multipleSelect();
+});

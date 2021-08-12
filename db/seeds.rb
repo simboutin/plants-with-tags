@@ -1,4 +1,6 @@
+Plant.destroy_all if Rails.env.development?
 Garden.destroy_all if Rails.env.development?
+Tag.destroy_all if Rails.env.development?
 
 little = Garden.create!(
   name: "My Little Garden",
@@ -28,4 +30,8 @@ Plant.create!(
   garden: other
 )
 
-# names = %w(Fruit\ tree Cactus Greasy\ plant Flower Ferns Conifers)
+names = %w(Fruit\ tree Cactus Greasy\ plant Flower Ferns Conifers)
+
+names.each do |name|
+  Tag.create!(name: name)
+end
